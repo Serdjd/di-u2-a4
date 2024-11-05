@@ -4,7 +4,7 @@ import { getImageUrl } from './utils.js';
 
 function Person({person}) {
   return (
-    <li key={person.id}>
+    <li>
       <img
         src={getImageUrl(person)}
         alt={person.name}
@@ -18,16 +18,21 @@ function Person({person}) {
   )
 }
 export default function List() {
-  let quimicosTemp = people.filter(person => person.profession === 'químico')
-  let cientificiosTemp = people.filter(person => person.profession !== 'químico')
-  const quimicos = quimicosTemp.map(person => <Person person={person}/>)
-  const cientificos = cientificiosTemp.map(person => <Person person={person}/>)
+  const quimicos = people.filter(person => person.profession === 'químico')
+                    .map(person => <Person key={person.id} person={person}/>)
+  const cientificos = people.filter(person => person.profession !== 'químico')
+                        .map(person => <Person key={person.id} person={person}/>)
   return (
     <article>
-      <h1>Químicos</h1>
-      <ul>{quimicos}</ul>
-      <h1>Científicos</h1>
-      <ul>{cientificos}</ul>
+      <div>
+        <h1>Químicos</h1>
+        <ul>{quimicos}</ul>
+      </div>
+      <div>
+        <h1>Científicos</h1>
+        <ul>{cientificos}</ul>
+      </div>
+      
     </article>
   );
 }
