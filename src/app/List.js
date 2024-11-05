@@ -24,15 +24,10 @@ export default function List() {
                         .map(person => <Person key={person.id} person={person}/>)
   return (
     <article>
-      <div>
-        <h1>Químicos</h1>
+      <h1 key={0}>Químicos</h1>
         <ul>{quimicos}</ul>
-      </div>
-      <div>
-        <h1>Científicos</h1>
+        <h1 key={1}>Científicos</h1>
         <ul>{cientificos}</ul>
-      </div>
-      
     </article>
   );
 }
