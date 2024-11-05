@@ -25,9 +25,9 @@ export default function List() {
   return (
     <article>
       <h1 key={0}>Químicos</h1>
-        <ul>{quimicos}</ul>
-        <h1 key={1}>Científicos</h1>
-        <ul>{cientificos}</ul>
+      <ul>{quimicos}</ul>
+      <h1 key={1}>Científicos</h1>
+      <ul>{cientificos}</ul>
     </article>
   );
 }
